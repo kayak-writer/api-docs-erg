@@ -14,7 +14,7 @@ RowFinder lists hotel fitness centers that have rowing machines (ergs) from manu
 
 ## Overview
 
-RowFinder makes it easier to find hotels that have rowing machines by providing a single directory that is brand agnostic. The directory includes data such as the number of ergs at a hotel and fitness center hours.
+RowFinder provides listings of hotels that have ergs and includes data such as fitness center hours.
 
 ## Base Url
 

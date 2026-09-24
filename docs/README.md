@@ -1,6 +1,8 @@
 # RowFinder
 
-RowFinder lists hotel fitness centers that have rowing machines (ergs) from manufacturers such as Concept2 (the O.G. erg maker) and Hydrow. These manufacturers have their own directories, but they only list locations, including hotels, that carry their brand. RowFinder is brand-agnostic, allowing rowers to find rowing machines in hotels from all brands in one directory. As a result, rowers can keep up with their workouts even on the go.
+RowFinder lists hotel fitness centers that have rowing machines (ergs) from manufacturers such as Concept2 (the O.G. erg maker) and Hydrow. These manufacturers have their own directories, but they only list locations, including hotels, that carry their brand.
+
+RowFinder is brand-agnostic, allowing rowers to find rowing machines in hotels from all brands in one directory. With these tool, rowers can keep up with their workouts even on the go.
 
 ## Index
 * [Overview](#overview)
@@ -142,7 +144,7 @@ The following endpoints are available:
 
 | Method | Endpoint | Purpose |
 | --- | --- | --- |
-| GET | `/api/v1/healthz` | Checks API health. |
+| GET | `/api/v1/healthz` | Get API health. |
 | GET | `/api/v1/hotels` | List approved hotels. | 
 | GET | `/api/v1/stats` | Get approved hotel totals and brand counts. |
 | GET | `/api/v1/brands` | 	List brands and hotel counts. |

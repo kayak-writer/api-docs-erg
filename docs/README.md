@@ -18,7 +18,7 @@ RowFinder provides listings of hotels that have ergs and includes data such as f
 
 ## Base Url
 
-https://rowfinder.xyz
+`https://rowfinder.xyz`
 
 ## Quick Start
 

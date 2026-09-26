@@ -144,11 +144,11 @@ The following endpoints are available:
 
 | Method | Endpoint | Purpose |
 | --- | --- | --- |
-| GET | `/api/v1/healthz` | Get API health. |
-| GET | `/api/v1/hotels` | List approved hotels. | 
-| GET | `/api/v1/stats` | Get approved hotel totals and brand counts. |
-| GET | `/api/v1/brands` | 	List brands and hotel counts. |
-| GET | `/api/v1/cities` | 	List cities and hotel counts. |
+| GET | `/api/v1/healthz` | Get API health |
+| GET | `/api/v1/hotels` | List approved hotels | 
+| GET | `/api/v1/stats` | Get approved hotel totals and brand counts |
+| GET | `/api/v1/brands` | 	List brands and hotel counts |
+| GET | `/api/v1/cities` | 	List cities and hotel counts |
 
 **Query Parameters**
 
@@ -184,9 +184,9 @@ curl "https://rowfinder.xyz/api/v1/healthz"
 
 | Field | Type | Description |
 | --- | --- | ---|
-| Status | String | Current health status of the API. The value ` "ok" ` indicates that the service is running and responding normally. |
-| Service | String | Name of the service returning the response. This identifies the service as `rowfinder-api`. |
-| Version | String | Version of the public API responding to the request. The current version is `v1`. |
+| Status | String | Current health status of the API. The value ` "ok" ` indicates that the service is running and responding normally |
+| Service | String | Name of the service returning the response. This identifies the service as `rowfinder-api` |
+| Version | String | Version of the public API responding to the request. The current version is `v1` |
 
 ### Hotels
 
@@ -303,18 +303,18 @@ curl "https://rowfinder.xyz/api/v1/hotels"
 | --- | --- | --- | 
 | `id` | number | Unique hotel identifier |
 | `name` | string | Hotel name |
-| `city` | string | City and region or country, such as `Boston, MA.` |
-| `brand` | string | Normalized rowing-machine brand identifier, such as `"hydrow"` or `"concept2"`. |
-| `model` | string  or null | Specific machine model when known. `null` means no model was provided. |
-| `notes` | string or null | Additional information about the equipment or gym. `null` means no notes were provided. |
-| `votes` | number | Number of upvotes the hotel has received. |
-| `createdAt` | number | Unix timestamp in seconds indicating when the listing was created. |
-| `pagination.page` | number | Current page number returned in the response. In this example, the response contains page `1`.
-| `pagination.limit` | number | The maximum number of records requested for each page. In this example, up to `20` records can appear on a page. |
+| `city` | string | City and region or country, such as `Boston, MA` |
+| `brand` | string | Normalized rowing-machine brand identifier, such as `"hydrow"` or `"concept2"` |
+| `model` | string  or null | Specific machine model when known. `null` means no model was provided |
+| `notes` | string or null | Additional information about the equipment or gym. `null` means no notes were provided |
+| `votes` | number | Number of upvotes the hotel has received |
+| `createdAt` | number | Unix timestamp in seconds indicating when the listing was created |
+| `pagination.page` | number | Current page number returned in the response. In this example, the response contains page `1`
+| `pagination.limit` | number | The maximum number of records requested for each page. In this example, up to `20` records can appear on a page |
 | `pagination.total` | number | The total number of matching records across all pages. In this example, there are `8` matching records |
-| `pagination.totalPages` | number | The total number of pages available based on `total` and `limit`. In this example, the results fit on `1` page. |
-| `pagination.hasNextPage` | boolean | A boolean indicating whether another page of results is available. `false` means there is no next page. |
-| `pagination.hasPreviousPage` | boolean | A boolean indicating whether a page exists before the current page. `false` means this is the first page. |
+| `pagination.totalPages` | number | The total number of pages available based on `total` and `limit`. In this example, the results fit on `1` page |
+| `pagination.hasNextPage` | boolean | A boolean indicating whether another page of results is available. `false` means there is no next page |
+| `pagination.hasPreviousPage` | boolean | A boolean indicating whether a page exists before the current page. `false` means this is the first page |
 
 ### Stats
 
@@ -502,10 +502,10 @@ curl "https://rowfinder.xyz/api/v1/cities"
 
 | Status Code | Error Code | Meaning |
 | --- | --- | --- |
-| 400 | `INVALID_QUERY` | One or more query parameters are invalid. |
-| 404 | `NOT_FOUND` | The requested public API endpoint does not exist. | 
-| 429 | `RATE_LIMITED` | The rate limit was exceeded. | 
-| 500 | `INTERNAL_ERROR` | An unexpected server-side error occurred. | 
+| 400 | `INVALID_QUERY` | One or more query parameters are invalid |
+| 404 | `NOT_FOUND` | The requested public API endpoint does not exist | 
+| 429 | `RATE_LIMITED` | The rate limit was exceeded | 
+| 500 | `INTERNAL_ERROR` | An unexpected server-side error occurred | 
 
 ## Rate Limits
 

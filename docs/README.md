@@ -16,7 +16,7 @@ RowFinder is brand agnostic, allowing rowers to find rowing machines in hotels f
 
 ## Overview
 
-RowFinder provides listings of hotels that have ergs and includes data such as fitness center hours.
+RowFinder provides listings of hotels that have ergs in their fitness centers.
 
 ## Base Url
 

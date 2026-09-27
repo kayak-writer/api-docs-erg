@@ -1,8 +1,6 @@
 # RowFinder
 
-RowFinder lists hotel fitness centers that have rowing machines (ergs) from manufacturers such as Concept2 (`the O.G. erg maker`) and Hydrow. These manufacturers have their own directories, but they only list locations, including hotels, that carry their brand.
-
-RowFinder is brand agnostic, allowing rowers to find rowing machines in hotels from all brands in one directory. With these tool, rowers can keep up with their workouts even on the go.
+RowFinder lists hotel fitness centers that have rowing machines, including ergs from Concept2 and Hydrow. These manufacturers have their own directories, but they only list locations that carry their brand. RowFinder is brand-agnostic, allowing rowers to find rowing machines from all brands in one directory.
 
 ## Index
 * [Overview](#overview)
@@ -16,11 +14,11 @@ RowFinder is brand agnostic, allowing rowers to find rowing machines in hotels f
 
 ## Overview
 
-RowFinder provides listings of hotels that have ergs in their fitness centers.
+RowFinder makes it easier to find hotels that have rowing machines by providing a single directory that is brand agnostic. The directory includes data such as the number of ergs at a hotel and fitness center hours.
 
-## Base Url
+## Base URL
 
-`https://rowfinder.xyz`
+https://rowfinder.xyz
 
 ## Quick Start
 
@@ -128,13 +126,13 @@ A successful response contains a hotels array:
 
 ```
 
-### Endpoints
+## Endpoints
 
 RowFinder allows you to retrieve listings of hotels with rowing machines, review statistics and location counts, check the listing status, and download the live API definition.
 
 The following endpoints are available:
 
-* [Health](#healthz)
+* [Health](#health)
 * [Hotels](#hotels)
 * [Stats](#stats)
 * [Brands](#brands)
@@ -144,19 +142,19 @@ The following endpoints are available:
 
 | Method | Endpoint | Purpose |
 | --- | --- | --- |
-| GET | `/api/v1/healthz` | Get API health |
-| GET | `/api/v1/hotels` | List approved hotels | 
-| GET | `/api/v1/stats` | Get approved hotel totals and brand counts |
-| GET | `/api/v1/brands` | 	List brands and hotel counts |
-| GET | `/api/v1/cities` | 	List cities and hotel counts |
+| GET | `/api/v1/healthz` | Checks API health. |
+| GET | `/api/v1/hotels` | List approved hotels. | 
+| GET | `/api/v1/stats` | Get approved hotel totals and brand counts. |
+| GET | `/api/v1/brands` | 	List brands and hotel counts. |
+| GET | `/api/v1/cities` | 	List cities and hotel counts. |
 
 **Query Parameters**
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
 | `search` | string | - | Filter city names |
-| `page` | integer | - | Page number; defaults to `1` |
-| `limit` | integer | - | 	Results per page; defaults to `20`, maximum `100` |
+| `page` | integer | 1 | Page number; defaults to `1` |
+| `limit` | integer | 20 | 	Results per page; defaults to `20`, maximum `100` |
 
 ### Health
 
@@ -184,9 +182,9 @@ curl "https://rowfinder.xyz/api/v1/healthz"
 
 | Field | Type | Description |
 | --- | --- | ---|
-| Status | String | Current health status of the API. The value ` "ok" ` indicates that the service is running and responding normally |
-| Service | String | Name of the service returning the response. This identifies the service as `rowfinder-api` |
-| Version | String | Version of the public API responding to the request. The current version is `v1` |
+| Status | String | Current health status of the API. The value ` "ok" ` indicates that the service is running and responding normally. |
+| Service | String | Name of the service returning the response. This identifies the service as `rowfinder-api`. |
+| Version | String | Version of the public API responding to the request. The current version is `v1`. |
 
 ### Hotels
 
@@ -303,18 +301,18 @@ curl "https://rowfinder.xyz/api/v1/hotels"
 | --- | --- | --- | 
 | `id` | number | Unique hotel identifier |
 | `name` | string | Hotel name |
-| `city` | string | City and region or country, such as `Boston, MA` |
-| `brand` | string | Normalized rowing-machine brand identifier, such as `"hydrow"` or `"concept2"` |
-| `model` | string  or null | Specific machine model when known. `null` means no model was provided |
-| `notes` | string or null | Additional information about the equipment or gym. `null` means no notes were provided |
-| `votes` | number | Number of upvotes the hotel has received |
-| `createdAt` | number | Unix timestamp in seconds indicating when the listing was created |
-| `pagination.page` | number | Current page number returned in the response. In this example, the response contains page `1`
-| `pagination.limit` | number | The maximum number of records requested for each page. In this example, up to `20` records can appear on a page |
+| `city` | string | City and region or country, such as `Boston, MA.` |
+| `brand` | string | Normalized rowing-machine brand identifier, such as `"hydrow"` or `"concept2"`. |
+| `model` | string  or null | Specific machine model when known. `null` means no model was provided. |
+| `notes` | string or null | Additional information about the equipment or gym. `null` means no notes were provided. |
+| `votes` | number | Number of upvotes the hotel has received. |
+| `createdAt` | number | Unix timestamp in seconds indicating when the listing was created. |
+| `pagination.page` | number | Current page number returned in the response. In this example, the response contains page `1`.
+| `pagination.limit` | number | The maximum number of records requested for each page. In this example, up to `20` records can appear on a page. |
 | `pagination.total` | number | The total number of matching records across all pages. In this example, there are `8` matching records |
-| `pagination.totalPages` | number | The total number of pages available based on `total` and `limit`. In this example, the results fit on `1` page |
-| `pagination.hasNextPage` | boolean | A boolean indicating whether another page of results is available. `false` means there is no next page |
-| `pagination.hasPreviousPage` | boolean | A boolean indicating whether a page exists before the current page. `false` means this is the first page |
+| `pagination.totalPages` | number | The total number of pages available based on `total` and `limit`. In this example, the results fit on `1` page. |
+| `pagination.hasNextPage` | boolean | A boolean indicating whether another page of results is available. `false` means there is no next page. |
+| `pagination.hasPreviousPage` | boolean | A boolean indicating whether a page exists before the current page. `false` means this is the first page. |
 
 ### Stats
 
@@ -365,15 +363,15 @@ curl "https://rowfinder.xyz/api/v1/stats"
 | Field | Type | Description |
 | --- | --- | --- | 
 | `data.total` | number | Total number of approved hotels |
-| `cities` | number | Total number of cities covered |
-| `brand` | string | Brand name of erg (e.g., Concept 2 or Hydrow) |
-| `byBrand.total` | number | Total number of each brand (e.g., Concept 2 or Hydrow) |
+| `data.cities` | number | Total number of cities covered |
+| `data.byBrand.brand` | string | Brand name of erg (e.g., Concept 2 or Hydrow) |
+| `data.byBrand.total` | number | Total number of each brand (e.g., Concept 2 or Hydrow) |
 
 ### Brands
 
 **Endpoint**
 
-Retrieves statistics for the listing of hotels.
+Retrieves the number of rowing machines listed in the directory from each brand.
 
 ```bash
 curl "https://rowfinder.xyz/api/v1/brands"
@@ -446,13 +444,13 @@ curl "https://rowfinder.xyz/api/v1/brands"
 
 **Endpoint**
 
-Retrieves statistics for the listing of hotels.
+Retrieves the number of hotels listed in the directory in each city.
 
 ```bash
 curl "https://rowfinder.xyz/api/v1/cities"
 ```
 
-**Responses**
+**Response**
 
 ```json
 
@@ -496,16 +494,16 @@ curl "https://rowfinder.xyz/api/v1/cities"
 | Field | Type | Description |
 | --- | --- | --- | 
 | `data.city` | string | City name |
-| `data.total` | number | Total number of listed ergs in each city |
+| `data.total` | number | Total number of listed hotels in each city |
 
 ## Errors
 
 | Status Code | Error Code | Meaning |
 | --- | --- | --- |
-| 400 | `INVALID_QUERY` | One or more query parameters are invalid |
-| 404 | `NOT_FOUND` | The requested public API endpoint does not exist | 
-| 429 | `RATE_LIMITED` | The rate limit was exceeded | 
-| 500 | `INTERNAL_ERROR` | An unexpected server-side error occurred | 
+| 400 | `INVALID_QUERY` | One or more query parameters are invalid. |
+| 404 | `NOT_FOUND` | The requested public API endpoint does not exist. | 
+| 429 | `RATE_LIMITED` | The rate limit was exceeded. | 
+| 500 | `INTERNAL_ERROR` | An unexpected server-side error occurred. | 
 
 ## Rate Limits
 
@@ -513,7 +511,7 @@ IPs are limited to 120 requests per minute. If you exceed this limit, the API re
 
 ## Data Freshness
 
-New listings display as soon as a listing is approved. Use `GET /api/v1/healthz` to check the latest run.
+New listings display as soon as a listing is approved.
 
 ## Contact
 
